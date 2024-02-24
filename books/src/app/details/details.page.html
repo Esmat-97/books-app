@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="row row-cols-3 row-cols-md-3 g-4">
+   
+    <div class="col" >
+      <div class="card h-100">
+        <img [src]="(iti.image)" class="card-img-top"  >
+        <div class="card-body">
+          <div class="card-text">{{iti.name}}</div>
+          <div class="card-text">{{iti.author}}</div>
+          <div class="card-text">{{iti.year}}</div>
+          <div class="card-text">{{iti.type}}</div>
+   
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+</ion-content>

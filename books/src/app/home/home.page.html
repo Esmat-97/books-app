@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <input type="text" style="width: 250px;" (input)="filter($event)" placeholder="search....">
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="row row-cols-3 row-cols-md-3 g-4">
+   
+    <div class="col" *ngFor="let x of filterbooks">
+      <div class="card h-100">
+        <img [src]="x.image" class="card-img-top"  >
+        <div class="card-body">
+          <div class="card-text">{{x.name}}</div>
+          <button class="btn btn-warning" (click)="goto(x.id)">more</button>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+
+
+
+
+    
+
+</ion-content>
