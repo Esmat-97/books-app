@@ -15,13 +15,13 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private router:Router) {}
+  constructor(private router:Router ,private httpCliet:HttpClient) {}
 
   inputvalue:string="";
  books:any=[];
  filterbooks:any=[];
+ index:any;
 
-  httpCliet=inject(HttpClient)
 
   ngOnInit(): void {
   this.fetchData()
@@ -50,5 +50,11 @@ else{
   this.filterbooks = this.books.filter((item:any)=>item.name.includes(this.inputvalue) )
 }
 
+  }
+
+
+  del(item:any){
+ this.index= this.filterbooks.indexOf(item);
+ this.filterbooks.splice(this.index,1);
   }
 }

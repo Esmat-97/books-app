@@ -1,7 +1,48 @@
+<ion-app>
+
+
+
+  <ion-menu side="start" contentId="main-content">
+
+    <ion-header >
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item><ion-icon name="notifications-outline"></ion-icon>Notification</ion-item>
+        <ion-item><ion-icon name="shield-checkmark-outline"></ion-icon>Privacy</ion-item>
+        <ion-item><ion-icon name="language-outline"></ion-icon>Languages</ion-item>
+        <ion-item><ion-icon name="chatbubble-ellipses-outline"></ion-icon>Ask</ion-item>
+        <ion-item><ion-icon name="cog-outline"></ion-icon>Settings</ion-item>   
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+
+
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
+
+
+
+
 <ion-header [translucent]="true">
   <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+
     <ion-title>
-      <input type="text" style="width: 250px;" (input)="filter($event)" placeholder="search....">
+      <input type="text" style="width: 200px;" (input)="filter($event)" placeholder="search....">
 
     </ion-title>
   </ion-toolbar>
@@ -16,6 +57,7 @@
         <div class="card-body">
           <div class="card-text">{{x.name}}</div>
           <button class="btn btn-warning" (click)="goto(x.id)">more</button>
+          <button class="btn btn-danger" (click)="del(x)">delete</button>
         </div>
       </div>
     </div>
@@ -30,3 +72,4 @@
     
 
 </ion-content>
+</ion-app>
